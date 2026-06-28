@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:100vh;
+
+    background:linear-gradient(135deg,#5b7cfa,#7b4cc2);
+
+}
+
+.container{
+
+    width:420px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    animation:muncul .7s;
+}
+
+@keyframes muncul{
+
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#333;
+
+    font-size:34px;
+
+}
+
+h1 i{
+
+    color:#4CAF50;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#6C63FF;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(90deg,#5b7cfa,#7b4cc2);
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+}
+
+#hasil{
+
+    margin-top:25px;
+
+    background:#f4f4f4;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    display:none;
+
+}
+
+#hasil h2{
+
+    margin-bottom:10px;
+
+    color:#333;
+
+}
+
+#hasil p{
+
+    margin:8px 0;
+
+    font-size:18px;
+
+}

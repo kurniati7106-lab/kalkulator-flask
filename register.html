@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a2e; color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh; }
+       .box { background: #16213e; padding: 30px; border-radius: 10px; width: 300px; text-align: center; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; }
+        button { background: #e94560; color: white; cursor: pointer; }
+        a { color: #e94560; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>DAFTAR AKUN</h1>
+        <form action="/register" method="POST">
+            <input type="text" name="username" placeholder="Username Kamu" required>
+            <input type="password" name="password" placeholder="Password Kamu" required>
+            <button type="submit">Daftar</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}<p style="color:orange;">{{ messages[0] }}</p>{% endif %}
+        {% endwith %}
+        <p>Udah punya akun? <a href="/login">Login di sini</a></p>
+    </div>
+</body>
+</html>

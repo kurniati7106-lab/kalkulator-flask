@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard IPK</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a2e; color: #fff; display: flex; justify-content: center; align-items: flex-start; padding-top: 50px; margin: 0; }
+       .box { background: #16213e; padding: 30px; border-radius: 10px; width: 400px; text-align: center; box-shadow: 0 0 15px rgba(233, 69, 96, 0.2); }
+        .logo { width: 80px; margin-bottom: 10px; } /* UKURAN LOGO */
+        input, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 5px; border: none; font-size: 16px; box-sizing: border-box; }
+        button { background: #e94560; color: white; cursor: pointer; font-weight: bold; }
+        .hasil { margin-top: 20px; font-size: 24px; color: #0f0; font-weight: bold; }
+        .logout { display: block; margin-top: 15px; color: #aaa; }
+        table { width: 100%; margin-top: 20px; font-size: 12px; text-align: left; }
+        th, td { padding: 5px; border-bottom: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo"> <!-- INI LOGONYA -->
+        <h1>Kalkulator IPK</h1>
+        <p>Halo, {{ current_user.username }}!</p>
+
+        <form action="/hitung" method="POST">
+            <input type="number" step="any" name="nilai1" placeholder="Nilai 1 [0-4]" required>
+            <input type="number" step="any" name="nilai2" placeholder="Nilai 2 [0-4]" required>
+            <button type="submit">Hitung IPK</button>
+        </form>
+
+        {% if hasil is not none %}
+            <div class="hasil">IPK Kamu: {{ hasil }}</div>
+        {% endif %}
+
+        <h3>5 Perhitungan Terakhir</h3>
+        <table>
+            <tr><th>Tanggal</th><th>Perhitungan</th></tr>
+            {% for h in history %}
+            <tr>
+                <td>{{ h.tanggal.strftime('%d/%m %H:%M') }}</td>
+                <td>{{ h.perhitungan }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="2">Belum ada history</td></tr>
+            {% endfor %}
+        </table>
+
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+</body>
+</html>

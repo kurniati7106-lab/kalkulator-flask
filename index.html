@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login App</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;
+            font-family: Arial;
+        }
+        .card {
+            background: white; padding: 30px; border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); width: 300px;
+        }
+        input, button {
+            width: 100%; padding: 10px; margin: 8px 0; border-radius: 10px; border: 1px solid #ddd;
+        }
+        button {
+            background: linear-gradient(90deg, #667eea, #764ba2); color: white; border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>KALKULATOR LOGIN</h2> 
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Username Kamu" required>
+            <input type="password" name="password" placeholder="Password Kamu" required>
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+</body>
+</html>
